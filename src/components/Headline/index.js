@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 class Headline extends React.Component {
@@ -17,4 +18,19 @@ class Headline extends React.Component {
     );
   }
 }
+
+Headline.propTypes = {
+  title: PropTypes.string,
+  desc: PropTypes.string,
+  tempArr: PropTypes.arrayOf(
+    PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      email: PropTypes.string,
+      age: PropTypes.number,
+      onlineStatus: PropTypes.bool,
+    }),
+  ),
+};
+
 export default Headline;
