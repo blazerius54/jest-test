@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './style.scss';
 
 class Headline extends React.Component {
@@ -33,4 +34,8 @@ Headline.propTypes = {
   ),
 };
 
-export default Headline;
+// export default Headline;
+
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(Headline);

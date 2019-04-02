@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Headline from './components/Headline';
 
 // Const for testing proptypes
-
 const tempArr = [
   {
     fName: 'Joe',
