@@ -34,8 +34,4 @@ Headline.propTypes = {
   ),
 };
 
-// export default Headline;
-
-const mapStateToProps = state => state;
-
-export default connect(mapStateToProps)(Headline);
+export default Headline;
