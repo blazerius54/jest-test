@@ -30,3 +30,7 @@ button {
     font-size: inherit;
     cursor: pointer;
 }
+
+button:focus {
+    outline: none;
+}
