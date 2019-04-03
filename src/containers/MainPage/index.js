@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import Headline from '../../components/Headline';
+import SinglePost from "../../components/SinglePost";
 
 // Const for testing proptypes
 const tempArr = [
@@ -15,6 +16,10 @@ const tempArr = [
 ];
 
 class MainPage extends Component {
+  postRequest = () => {
+    console.log('send request');
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -23,17 +28,16 @@ class MainPage extends Component {
           title="Posts"
           desc="Click to render posts"
           tempArr={tempArr}
+          postRequest={this.postRequest}
         />
+        <SinglePost title="title" desc="desc" />
       </React.Fragment>
     );
   }
 }
 
-// export default MainPage;
-
 const mapStateToProps = state => {
-  console.log(state);
   return state;
-}
+};
 
 export default connect(mapStateToProps)(MainPage);

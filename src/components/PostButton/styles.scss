@@ -1,0 +1,13 @@
+.post-btn {
+  background: #4c4c4c;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s ease;
+  align-self: flex-end;
+
+  &:hover {
+    box-shadow: 3px 4px 3px 0 rgb(195, 195, 195);
+  }
+}

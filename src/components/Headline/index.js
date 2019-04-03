@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import './style.scss';
+import PostButton from '../PostButton';
+import './styles.scss';
 
 class Headline extends React.Component {
   render() {
-    const { title, desc } = this.props;
+    const { title, desc, postRequest } = this.props;
 
     if (!title) {
       return null;
@@ -13,14 +13,18 @@ class Headline extends React.Component {
 
     return (
       <div className="headline-wrapper" data-test="headlineComponent">
-        <h2 data-test="header">{title}</h2>
-        <p data-test="desc">{desc}</p>
+        <div>
+          <h2 data-test="header">{title}</h2>
+          <p data-test="desc">{desc}</p>
+        </div>
+        <PostButton buttonText="Get your posts" func={postRequest} />
       </div>
     );
   }
 }
 
 Headline.propTypes = {
+  postRequest: PropTypes.func,
   title: PropTypes.string,
   desc: PropTypes.string,
   tempArr: PropTypes.arrayOf(

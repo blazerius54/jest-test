@@ -12,6 +12,7 @@ describe('Headline Component', () => {
       const expectedProps = {
         title: 'Test title',
         desc: 'Test description',
+        postRequest: () => {},
         tempArr: [
           {
             firstName: 'Test Name',
