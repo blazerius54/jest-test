@@ -4,7 +4,7 @@ import './style.scss';
 
 const SinglePost = ({ title, desc }) =>
   title ? (
-    <div  className="single-post" data-test="postWrapper">
+    <div className="single-post" data-test="postWrapper">
       <h3 data-test="postTitle">{title}</h3>
       <p data-test="postDesc">{desc}</p>
     </div>
