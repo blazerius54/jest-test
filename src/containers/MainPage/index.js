@@ -27,7 +27,7 @@ class MainPage extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-      <React.Fragment>
+      <div data-test="mainPageComponent">
         <Header />
         <Headline
           title="Posts"
@@ -37,11 +37,11 @@ class MainPage extends React.Component {
         />
         <main>
           {posts.length > 0 &&
-          posts.map(({ id, title, body }) => (
-            <SinglePost key={id} title={title} desc={body} />
-          ))}
+            posts.map(({ title, body }) => (
+              <SinglePost key={Math.random()} title={title} desc={body} />
+            ))}
         </main>
-      </React.Fragment>
+      </div>
     );
   }
 }

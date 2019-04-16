@@ -13,10 +13,5 @@ export const checkElemetnts = (component, text, element, result) => {
 export const propsError = (component, expectedProps) =>
   checkPropTypes(component.propTypes, expectedProps, 'props', component.name);
 
-// export const testStore = initialState =>
-//   createStore(rootReducer, initialState, applyMiddleware(...middlewares));
-
-export const testStore = (initialState) => {
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStoreWithMiddleware(rootReducer, initialState);
-};
+export const testStore = initialState =>
+  createStore(rootReducer, initialState, applyMiddleware(...middlewares));
