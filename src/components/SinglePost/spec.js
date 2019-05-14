@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SinglePost from './index';
-import { checkElemetnts, propsError } from '../../utils';
+import { checkElements, propsError } from '../../utils';
 
 const component = props => shallow(<SinglePost {...props} />);
 const props = {
@@ -17,19 +17,19 @@ describe('Single Post component', () => {
   });
 
   describe('Render', () => {
-    checkElemetnts(
+    checkElements(
       component(props),
       'Should render post`s wrapper',
       'postWrapper',
       1,
     );
-    checkElemetnts(
+    checkElements(
       component(props),
       'Should render post`s title',
       'postTitle',
       1,
     );
-    checkElemetnts(
+    checkElements(
       component(props),
       'Should render post`s description post',
       'postDesc',
@@ -38,7 +38,7 @@ describe('Single Post component', () => {
   });
 
   describe('No render without props', () => {
-    checkElemetnts(
+    checkElements(
       component(),
       'Should`t render post`s wrapper',
       'postWrapper',

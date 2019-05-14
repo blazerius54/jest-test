@@ -3,10 +3,12 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers/combineReducers';
 import { middlewares } from '../store';
 
-export const checkElemetnts = (component, text, element, result) => {
+export const findElement = (component, element) => component.find(`[data-test='${element}']`);
+
+export const checkElements = (component, text, element, result) => {
   it(text, () => {
-    const findElement = component.find(`[data-test='${element}']`);
-    expect(findElement.length).toBe(result);
+    const searchedElement = findElement(component, element);
+    expect(searchedElement.length).toBe(result);
   });
 };
 

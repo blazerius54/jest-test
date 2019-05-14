@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MainPage from './index';
-import { checkElemetnts, testStore } from '../../utils';
+import { checkElements, testStore } from '../../utils';
 
 const component = (initialState = {}) => {
   const store = testStore(initialState);
@@ -30,7 +30,7 @@ describe('MainPage', () => {
     },
   };
 
-  checkElemetnts(
+  checkElements(
     component(initialState),
     'should render without errors',
     'mainPageComponent',

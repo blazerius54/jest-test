@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Headline from './index';
-import { checkElemetnts, propsError } from '../../utils';
+import { checkElements, propsError } from '../../utils';
 
 const component = props => shallow(<Headline {...props} />);
 
@@ -35,20 +35,20 @@ describe('Headline Component', () => {
       desc: 'Test desc',
     };
 
-    checkElemetnts(
+    checkElements(
       component(props),
       'should render without errors',
       'headlineComponent',
       1,
     );
 
-    checkElemetnts(component(props), 'should render title', 'header', 1);
+    checkElements(component(props), 'should render title', 'header', 1);
 
-    checkElemetnts(component(props), 'should render description', 'desc', 1);
+    checkElements(component(props), 'should render description', 'desc', 1);
   });
 
   // Test render without props
   describe('No props', () => {
-    checkElemetnts(component(), 'should not render ', 'headlineComponent', 0);
+    checkElements(component(), 'should not render ', 'headlineComponent', 0);
   });
 });

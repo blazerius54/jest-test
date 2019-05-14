@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import { checkElemetnts } from './utils';
+import { checkElements } from './utils';
 
 const component = () => shallow(<App />);
 
 describe('Should render without errors', () => {
-  checkElemetnts(component(), 'Should render component', 'appComponent', 1);
+  checkElements(component(), 'Should render component', 'appComponent', 1);
 });
