@@ -19,22 +19,42 @@ const tempArr = [
   },
 ];
 
+const initialState = {
+  showBtn: true,
+};
+
 class MainPage extends React.Component {
+  state = {
+    ...initialState,
+  };
+
+  toggleBtn = () => {
+    this.setState(prevState => ({
+      showBtn: !prevState.showBtn,
+    }))
+  };
+
   postRequest = () => {
     this.props.fetchPosts();
+    this.toggleBtn();
   };
 
   render() {
     const { posts } = this.props;
+    const { showBtn } = this.state;
     return (
       <div data-test="mainPageComponent">
         <Header />
-        <Headline
-          title="Posts"
-          desc="Click to render posts"
-          tempArr={tempArr}
-          postRequest={this.postRequest}
-        />
+        {
+          showBtn && (
+              <Headline
+                  title="Posts"
+                  desc="Click to render posts"
+                  tempArr={tempArr}
+                  postRequest={this.postRequest}
+              />
+          )
+        }
         <main>
           {posts.length > 0 &&
             posts.map(({ title, body }) => (

@@ -36,4 +36,11 @@ describe('MainPage', () => {
     'mainPageComponent',
     1,
   );
+
+  it('toggleBtn method should update state correctly', () => {
+    const classInstance = component(initialState).instance();
+    classInstance.toggleBtn();
+    const newStateBtn = classInstance.state.showBtn;
+    expect(newStateBtn).toBe(false);
+  })
 });
